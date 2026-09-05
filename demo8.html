@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Layout 4 - Grid of Boxes</title>
+<style>
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* the whole page is a flex column */
+  .page {
+    display: flex;              /* flexbox used here */
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 8px;
+  }
+
+  .box {
+    background-color: #d9d9d9;
+    border: 1px solid #bbbbbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* logo and navigation sit side by side */
+  .top-row {
+    display: flex;              /* flexbox used here */
+    gap: 8px;
+    height: 50px;
+  }
+
+  .top-row .box {
+    flex: 1;
+  }
+
+  /* the 4x4 grid of tiles, takes up most of the page */
+  .tile-grid {
+    display: grid;                          /* grid used here */
+    grid-template-columns: repeat(4, 1fr);  /* 4 equal columns */
+    grid-template-rows: repeat(4, 1fr);     /* 4 equal rows */
+    gap: 8px;
+    flex: 1;                                /* takes remaining space */
+  }
+
+  .tile {
+    background-color: #cfcfcf;
+    border: 1px solid #bbbbbb;
+  }
+
+  /* three boxes below the grid */
+  .boxes-row {
+    display: flex;              /* flexbox used here */
+    gap: 8px;
+    height: 70px;
+  }
+
+  .boxes-row .box {
+    flex: 1;
+  }
+
+  .footer {
+    height: 45px;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="page">
+
+    <div class="top-row">
+      <div class="box">Logo</div>
+      <div class="box">Navigation</div>
+    </div>
+
+    <div class="tile-grid">
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+    </div>
+
+    <div class="boxes-row">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
+
+    <div class="box footer">Footer</div>
+
+  </div>
+
+</body>
+</html>
