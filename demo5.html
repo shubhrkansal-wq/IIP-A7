@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Layout 1 - Sidebar and Body</title>
+<style>
+
+  /* make the page fill the whole screen */
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* the whole page is a flex column: logo, nav, header, main, footer */
+  .page {
+    display: flex;              /* flexbox used here */
+    flex-direction: column;
+    height: 100vh;               /* full page height */
+    background-color: #f2f2f2;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 8px;
+  }
+
+  /* grey boxes used for logo, nav, header, footer */
+  .box {
+    background-color: #d9d9d9;
+    border: 1px solid #bbbbbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .nav {
+    height: 45px;
+  }
+
+  .header {
+    height: 90px;
+  }
+
+  .footer {
+    height: 45px;
+  }
+
+  /* the row that holds the sidebar and the body */
+  .main-row {
+    display: flex;              /* flexbox used here */
+    flex: 1;                    /* takes up all remaining space */
+    gap: 8px;
+  }
+
+  .sidebar {
+    background-color: #cfcfcf;
+    border: 1px solid #bbbbbb;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .body-area {
+    background-color: #cfcfcf;
+    border: 1px solid #bbbbbb;
+    flex: 1;                    /* takes up remaining width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="page">
+
+    <div class="box logo">Logo</div>
+    <div class="box nav">Navigation</div>
+    <div class="box header">Header / Banner</div>
+
+    <div class="main-row">
+      <div class="sidebar">Side Bar</div>
+      <div class="body-area">Body Area</div>
+    </div>
+
+    <div class="box footer">Footer</div>
+
+  </div>
+
+</body>
+</html>
