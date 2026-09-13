@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  .form-box {
+    width: 350px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #999;
+  }
+  h2 {
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-top: 12px;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 4px;
+  }
+  input[type="submit"] {
+    margin-top: 15px;
+    padding: 8px 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="form-box">
+  <h2>Registration Form</h2>
+  <form action="#" method="post">
+
+    <label>Name:</label>
+    <input type="text" name="name">
+
+    <label>Password:</label>
+    <input type="password" name="password">
+
+    <label>Email:</label>
+    <input type="email" name="email">
+
+    <label>Date of Birth:</label>
+    <input type="date" name="dob">
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="other"> Other
+
+    <br><br>
+
+    <label>Subjects:</label>
+    <input type="checkbox" name="subject" value="maths"> Maths
+    <input type="checkbox" name="subject" value="science"> Science
+    <input type="checkbox" name="subject" value="english"> English
+    <input type="checkbox" name="subject" value="computer"> Computer
+
+    <label>Upload Photo:</label>
+    <input type="file" name="photo">
+
+    <br>
+    <input type="submit" value="Register">
+
+  </form>
+</div>
+
+</body>
+</html>
