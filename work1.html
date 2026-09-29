@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubhr Kansal - Portfolio & Resume</title>
+    <style>
+        /* Global Reset and Body Styles */
+        *, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(167, 196, 196);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Centered Main Container to ensure uniform size across sections */
+        .main-container {
+            width: 85%;
+            max-width: 900px; /* Fixed maximum width constraint */
+            margin: 30px auto;
+        }
+
+        /* =======================================
+           TOP HEADER & INLINE NAVBAR LAYOUT
+           ======================================= */
+        .resume-header {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-bottom: none; /* Merges cleanly with the navbar below */
+            padding: 30px 40px 20px 40px;
+            text-align: center;
+        }
+
+        .resume-header h1 {
+            font-size: 26px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .resume-header p.subtitle {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .resume-header .contact-info {
+            font-size: 13px;
+            color: #444;
+        }
+
+        .resume-header .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 4px;
+        }
+
+        .resume-header .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Integrated Custom Navbar (Matches width of header section precisely) */
+        ul.navbar {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(53, 58, 58);
+            padding: 8px 0;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        ul.navbar li {
+            margin: 0px 15px;
+        }
+
+        ul.navbar li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            font-size: 13px;
+            display: block;
+        }
+
+        ul.navbar li a:hover {
+            color: aqua;
+            text-decoration: underline;
+            text-shadow: 0px 1px 2px #710522;
+        }
+
+        .active {
+            color: aqua;
+            text-decoration: underline;
+            text-shadow: 0px 1px 2px #710522;
+        }
+
+        /* =======================================
+           RESUME DOCUMENT SECTION (Body Area)
+           ======================================= */
+        .resume-body-section {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-top: none; /* Seamless attachment below navbar */
+            padding: 20px 40px 40px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section Heading Divider lines */
+        .resume-section-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 25px;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 3px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Education Table Styles */
+        .education-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .education-table th, .education-table td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .education-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Skills and Lists Styles */
+        .resume-list {
+            margin-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .resume-list li {
+            margin-bottom: 6px;
+        }
+
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .project-item h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        /* =======================================
+           PORTFOLIO VISUAL CARDS SECTION
+           ======================================= */
+        .portfolio-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 2px solid rgb(53, 58, 58);
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 1px solid #999;
+            border-radius: 6px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .project-card h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        .image-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #444;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .image-placeholder img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .view-btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #e1e7ed;
+            color: black;
+            padding: 8px 18px;
+            border: 1px solid #adb2b7;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .view-btn:hover {
+            background-color: #d0d6dc;
+        }
+        .shubhr-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container wrapping everything uniformly -->
+    <div class="main-container">
+
+        <!-- 1. RESUME HEADER (Name and Contacts Section) -->
+        <div class="resume-header">
+            <img src="shubhr.jpeg" alt="Shubhr Kansal" class="shubhr-img">
+            <h1>Shubhr Kansal</h1>
+            <p class="subtitle">B.Tech CSE (Artificial Intelligence) Student</p>
+            <div class="contact-info">
+                Email: shubhrkansal@gmail.com | Phone: +91 XXXXXXXXXX | 
+                <a href="https://github.com" target="_blank">GitHub</a> | 
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- 2. NAVBAR (Positioned directly below the name block with uniform sizing) -->
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="profile.html" target="_blank">About</a></li>
+            <li><a href="registration3.html" target="_self">Services</a></li>
+            <li><a href="login.html" target="_self">Contact</a></li>
+            <li><a href="#" class="active">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+
+        <!-- 3. RESUME MAIN BODY CONTENT -->
+        <div class="resume-body-section">
+            
+            <!-- About Me Heading & Info -->
+            <div class="resume-section-title">About Me</div>
+            <p>I am a first-year B.Tech student specializing in Computer Science and Artificial Intelligence. I am passionate about programming, artificial intelligence, web development, and technology. I am currently honing my programming fundamentals and working towards becoming a skilled software engineer.</p>
+
+            <!-- Education Heading & Structured Table -->
+            <div class="resume-section-title">Education</div>
+            <table class="education-table">
+                <thead>
+                    <tr>
+                        <th>Degree</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B.Tech (CSE - AI)</td>
+                        <td>KIET Group of Institutions</td>
+                        <td>2026 - Present</td>
+                    </tr>
+                    <tr>
+                        <td>Class 12</td>
+                        <td>KCM School, Moradabad</td>
+                        <td>2026</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Technical Skills Section -->
+            <div class="resume-section-title">Technical Skills</div>
+            <ul class="resume-list">
+                <li><strong>Languages:</strong> C, Python, HTML, CSS</li>
+                <li><strong>Developer Tools:</strong> VS Code</li>
+                <li><strong>Core Areas:</strong> Programming fundamentals, Artificial Intelligence beginner</li>
+            </ul>
+
+            <!-- Textual Projects Info -->
+            <div class="resume-section-title">Projects</div>
+            
+            <div class="project-item">
+                <h3>1. Personal Resume Website</h3>
+                <p>Created a personal resume webpage using standard HTML to display my education credentials, skillset highlights, and contact pathways.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>2. Programming Practice Projects</h3>
+                <p>Developed minor programs focused on developing logic flow checks, repository operations, number manipulation tasks, and pattern generators using C/Python.</p>
+            </div>
+
+            <!-- Certifications Section -->
+             <div class="resume-section-title">Certifications</div>
+            <ul class="resume-list">
+                <li>Programming Fundamentals course completion certifications.</li>
+                <li>Introductory artificial intelligence workshop pathways.</li>
+            </ul>
+
+            <!-- Career Objective Section -->
+            <div class="resume-section-title">Career Objective</div>
+            <p>Seeking an entry-level environment to apply engineering concepts, gain industrial technical competencies, and deliver functional software design outputs.</p>
+
+        </div>
+
+
+        <!-- 2. VISUAL PROJECT CARDS BLOCK (From Screenshot 1) -->
+        <div class="portfolio-title">Project Grid Showcase</div>
+        <!-- Project Card 1 -->
+        <div class="project-card">
+            <h2>Portfolio Website</h2>
+            <div class="image-placeholder">
+                <img src="no-image-found" alt="">
+                <span>Portfolio Website</span>
+            </div>
+            <p>A personal portfolio website created using HTML.</p>
+            <a href="#" class="view-btn">View Project</a>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card">
+            <h2>Restaurant Website</h2>
+            <div class="image-placeholder">
+                <img src="no-image-found" alt="">
+                <span>Restaurant Website</span>
+            </div>
+            <p>A personal restaurant website created using HTML.</p>
+            <a href="#" class="view-btn">View Project</a>
+        </div>
+
+        <!-- Student Registration Page -->
+         <div class="project-card">
+            <h2>Student Registration Page</h2>
+            <div class="image-placeholder">
+                <img src="no-image-found" alt="">
+                <span>Student Registration Page</span>
+            </div>
+            <p>A personal student registration page created using HTML.</p>
+            <a href="#" class="view-btn">View Project</a>
+        </div>
