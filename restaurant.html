@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bourbon | Restaurant</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #14100e;
+      color: #f4ece4;
+      line-height: 1.6;
+    }
+
+    /* Navbar: logo on the left, links on the right */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 6%;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      color: #e8a768;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #f4ece4;
+      text-decoration: none;
+      margin-left: 25px;
+    }
+
+    nav a:hover { color: #e8a768; }
+
+    /* Hero with background picture */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 6%;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=80")
+        center / cover;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p { margin-bottom: 25px; }
+
+    .btn {
+      background: #ff5a2b;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    /* Sections */
+    section { padding: 90px 6%; }
+
+    h2 {
+      font-family: Georgia, serif;
+      color: #e8a768;
+      margin-bottom: 10px;
+    }
+
+    .sub { color: #b9aa9c; margin-bottom: 40px; }
+
+    /* Menu cards: click a card to open it (no JavaScript needed) */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      align-items: start;
+    }
+
+    details {
+      background: #1e1814;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    details img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .info { padding: 20px; }
+
+    .info h3 { font-family: Georgia, serif; }
+
+    .price { color: #e8a768; font-weight: bold; }
+
+    .info p { color: #b9aa9c; }
+
+    .hint { color: #e8a768; margin-top: 10px; }
+
+    .ingredients {
+      padding: 0 20px 20px;
+      color: #b9aa9c;
+    }
+
+    /* Contact */
+    #contact { background: #1e1814; }
+
+    #contact h4 { color: #e8a768; margin-top: 20px; }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #b9aa9c;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <a href="#home" class="logo">Bourbon</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero" id="home">
+    <div>
+      <h1>Delicious Food, Made With Love</h1>
+      <p>Experience fresh ingredients, amazing flavours, and unforgettable meals.</p>
+      <a href="#menu" class="btn">Explore Our Menu</a>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <p class="sub">Click any dish to see what goes into it.</p>
+
+    <div class="menu-grid">
+
+      <details>
+        <summary>
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Margherita pizza">
+          <div class="info">
+            <h3>Margherita Pizza <span class="price">₹349</span></h3>
+            <p>A thin, wood-fired crust topped with tangy tomato sauce and melting mozzarella.</p>
+            <p class="hint">Click to see ingredients</p>
+          </div>
+        </summary>
+        <p class="ingredients"><b>Ingredients:</b> Pizza dough, tomato sauce, mozzarella, fresh basil, olive oil, salt.</p>
+      </details>
+
+      <details>
+        <summary>
+          <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80" alt="Cheeseburger with fries">
+          <div class="info">
+            <h3>Golden Burger <span class="price">₹299</span></h3>
+            <p>A juicy grilled patty in a toasted bun, served with crispy fries.</p>
+            <p class="hint">Click to see ingredients</p>
+          </div>
+        </summary>
+        <p class="ingredients"><b>Ingredients:</b> Brioche bun, grilled patty, cheddar, lettuce, tomato, onion, house sauce, potatoes.</p>
+      </details>
+
+      <details>
+        <summary>
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Grilled steak with vegetables">
+          <div class="info">
+            <h3>Herb Grilled Steak <span class="price">₹649</span></h3>
+            <p>Tender steak grilled over high heat and finished with garlic butter.</p>
+            <p class="hint">Click to see ingredients</p>
+          </div>
+        </summary>
+        <p class="ingredients"><b>Ingredients:</b> Steak, garlic, butter, rosemary, black pepper, sea salt, seasonal vegetables.</p>
+      </details>
+
+      <details>
+        <summary>
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Fresh garden salad">
+          <div class="info">
+            <h3>Garden Fresh Salad <span class="price">₹229</span></h3>
+            <p>A light, crunchy bowl of greens with a lemon and herb dressing.</p>
+            <p class="hint">Click to see ingredients</p>
+          </div>
+        </summary>
+        <p class="ingredients"><b>Ingredients:</b> Lettuce, cherry tomatoes, cucumber, avocado, olives, lemon juice, olive oil, herbs.</p>
+      </details>
+
+      <details>
+        <summary>
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" alt="Pancakes with berries">
+          <div class="info">
+            <h3>Berry Pancakes <span class="price">₹249</span></h3>
+            <p>Fluffy pancakes stacked high with fresh berries and warm maple syrup.</p>
+            <p class="hint">Click to see ingredients</p>
+          </div>
+        </summary>
+        <p class="ingredients"><b>Ingredients:</b> Flour, eggs, milk, butter, sugar, strawberries, blueberries, maple syrup.</p>
+      </details>
+
+      <details>
+        <summary>
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80" alt="Glazed donuts">
+          <div class="info">
+            <h3>Glazed Donuts <span class="price">₹179</span></h3>
+            <p>Soft, freshly fried donuts with a sweet vanilla glaze.</p>
+            <p class="hint">Click to see ingredients</p>
+          </div>
+        </summary>
+        <p class="ingredients"><b>Ingredients:</b> Flour, yeast, milk, eggs, sugar, butter, vanilla, powdered sugar glaze.</p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p class="sub">Book a table or ask us anything. We reply within a day.</p>
+
+    <h4>Address</h4>
+    <p>12 Market Road, Ghaziabad, Uttar Pradesh</p>
+
+    <h4>Phone</h4>
+    <p>+91 98765 43210</p>
+
+    <h4>Email</h4>
+    <p>hello@bourbon.com</p>
+
+    <h4>Opening hours</h4>
+    <p>Every day, 11:00 AM to 11:00 PM</p>
+  </section>
+
+  <footer>&copy; 2026 Bourbon. All rights reserved.</footer>
+
+</body>
+</html>
