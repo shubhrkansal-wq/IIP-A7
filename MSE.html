@@ -14,12 +14,36 @@
   <input type="checkbox" id="p3" class="toggle">
   <input type="checkbox" id="p4" class="toggle">
 
+  <!-- hidden radios: remember login state -->
+  <input type="radio" name="state" id="s-none" class="toggle" checked>
+  <input type="radio" name="state" id="s-open" class="toggle">
+  <input type="radio" name="state" id="s-in" class="toggle">
+
   <!-- NAVBAR -->
   <header class="navbar">
     <a href="#" class="logo">shop<span>kart</span></a>
     <input type="text" placeholder="Search ShopKart">
+
+    <label for="s-open" class="login-btn" title="Sign in to your account">Login</label>
+
+    <div class="user-box">
+      &#128100; Hello, User &#10003;
+      <label for="s-none" class="logout">Logout</label>
+    </div>
+
     <a href="#cart" title="View your cart">&#128722; Cart (<span class="count"></span>)</a>
   </header>
+
+  <!-- LOGIN POPUP -->
+  <div class="modal">
+    <div class="login-box">
+      <label for="s-none" class="close">&#10005;</label>
+      <h2>Login</h2>
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <label for="s-in" class="login-submit">Login</label>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
