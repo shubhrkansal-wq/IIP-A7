@@ -3,124 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glow Studio - Salon</title>
+  <title>ShopKart</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- hidden checkboxes: one for each product -->
+  <input type="checkbox" id="p1" class="toggle">
+  <input type="checkbox" id="p2" class="toggle">
+  <input type="checkbox" id="p3" class="toggle">
+  <input type="checkbox" id="p4" class="toggle">
+
   <!-- NAVBAR -->
   <header class="navbar">
-    <div class="container nav-inner">
-      <a href="#home" class="logo">Glow<span>Studio</span></a>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#faq">FAQ</a>
-        <a href="#booking">Book</a>
-      </nav>
-    </div>
+    <a href="#" class="logo">shop<span>kart</span></a>
+    <input type="text" placeholder="Search ShopKart">
+    <a href="#cart" title="View your cart">&#128722; Cart (<span class="count"></span>)</a>
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="home">
-    <h1>Look good. Feel even better.</h1>
-    <p>Haircuts, facials and bridal makeup by trained stylists in Ghaziabad.</p>
-    <a href="#booking" class="btn">Book an appointment</a>
+  <section class="hero">
+    <h1>Big Festive Sale</h1>
+    <p>Up to 60% off on mobiles, fashion and more</p>
   </section>
 
-  <!-- ABOUT -->
-  <section class="container" id="about">
-    <h2>About us</h2>
-    <p class="about-text">
-      Glow Studio started in 2018 with two chairs and one idea: every client
-      should leave looking like themselves, only better. We use branded,
-      skin-tested products and sterilised tools on every visit.
-    </p>
-    <div class="stats">
-      <div><h3>8+</h3><p>Years</p></div>
-      <div><h3>5000+</h3><p>Clients</p></div>
-      <div><h3>12</h3><p>Stylists</p></div>
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="product">
+      <div class="emoji">&#128241;</div>
+      <h4>Smartphone</h4>
+      <p class="price">&#8377;14,999</p>
+      <label for="p1" class="add-btn"></label>
+    </div>
+    <div class="product">
+      <div class="emoji">&#127911;</div>
+      <h4>Headphones</h4>
+      <p class="price">&#8377;1,299</p>
+      <label for="p2" class="add-btn"></label>
+    </div>
+    <div class="product">
+      <div class="emoji">&#8986;</div>
+      <h4>Smart Watch</h4>
+      <p class="price">&#8377;2,499</p>
+      <label for="p3" class="add-btn"></label>
+    </div>
+    <div class="product">
+      <div class="emoji">&#128218;</div>
+      <h4>Book</h4>
+      <p class="price">&#8377;499</p>
+      <label for="p4" class="add-btn"></label>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="container" id="services">
-    <h2>Our services</h2>
-    <div class="grid">
-      <div class="card"><span>&#9986;&#65039;</span><h3>Haircut</h3><p>from &#8377;300</p></div>
-      <div class="card"><span>&#127912;</span><h3>Hair colour</h3><p>from &#8377;1,500</p></div>
-      <div class="card"><span>&#129494;&#8205;&#9792;&#65039;</span><h3>Facial</h3><p>from &#8377;800</p></div>
-      <div class="card"><span>&#128132;</span><h3>Bridal makeup</h3><p>from &#8377;12,000</p></div>
-    </div>
-  </section>
+  <!-- CART -->
+  <section class="cart" id="cart">
+    <h2>Your Cart</h2>
+    <p class="empty">Your cart is empty.</p>
 
-  <!-- REVIEWS -->
-  <section class="container" id="reviews">
-    <h2>What clients say</h2>
-    <div class="reviews">
-      <div class="review">
-        <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-        <p>"Best haircut I've had in years."</p>
-        <h4>Priya M.</h4>
-      </div>
-      <div class="review">
-        <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-        <p>"Clean salon, polite staff, fair prices."</p>
-        <h4>Rohit S.</h4>
-      </div>
-      <div class="review">
-        <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-        <p>"My bridal makeup lasted the whole day."</p>
-        <h4>Ananya K.</h4>
-      </div>
-    </div>
-  </section>
+    <div class="item item1"><span>&#128241; Smartphone</span><span>&#8377;14,999</span><label for="p1" class="remove">Remove</label></div>
+    <div class="item item2"><span>&#127911; Headphones</span><span>&#8377;1,299</span><label for="p2" class="remove">Remove</label></div>
+    <div class="item item3"><span>&#8986; Smart Watch</span><span>&#8377;2,499</span><label for="p3" class="remove">Remove</label></div>
+    <div class="item item4"><span>&#128218; Book</span><span>&#8377;499</span><label for="p4" class="remove">Remove</label></div>
 
-  <!-- FAQ (details + summary) -->
-  <section class="container" id="faq">
-    <h2>Frequently asked questions</h2>
-    <div class="faq">
-      <details>
-        <summary>Do I need to book in advance?</summary>
-        <p>Walk-ins are welcome, but booking ensures you get your preferred time and stylist.</p>
-      </details>
-      <details>
-        <summary>What are your opening hours?</summary>
-        <p>Monday to Saturday: 10 AM to 8 PM. Sunday: 11 AM to 6 PM.</p>
-      </details>
-      <details>
-        <summary>Which payment methods do you accept?</summary>
-        <p>Cash, UPI and all major debit and credit cards.</p>
-      </details>
-      <details>
-        <summary>Can I cancel or reschedule?</summary>
-        <p>Yes. Please call us at least 4 hours before your appointment.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- BOOKING FORM -->
-  <section class="container" id="booking">
-    <h2>Book your appointment</h2>
-    <form>
-      <input type="text" placeholder="Your name" required>
-      <input type="tel" placeholder="Phone number" required>
-      <select>
-        <option>Haircut</option>
-        <option>Hair colour</option>
-        <option>Facial</option>
-        <option>Bridal makeup</option>
-      </select>
-      <input type="date">
-      <button class="btn">Request appointment</button>
-    </form>
+    <h3 class="total-line">Total: &#8377;<span class="total"></span></h3>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>Shop 12, Main Market, Indirapuram, Ghaziabad | +91 98765 XXXXX</p>
-    <p>&copy; 2026 Glow Studio. Made by a B.Tech student.</p>
+    <p>&copy; 2026 ShopKart. Made by a B.Tech student.</p>
   </footer>
 
 </body>
